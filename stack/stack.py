@@ -11,36 +11,24 @@ return elements in Last In First Out order.
    implementing a Stack?
 """
 
+from singly_linked_list import LinkedList
+
+
 class Stack:
     def __init__(self):
         self.size = 0
-        self.storage = [ ]
+        self.storage = LinkedList()
 
     def __len__(self):
         return len(self.storage)
 
     def push(self, value):
-        self.storage.append( value)
+        self.storage.add_to_tail(value)
 
     def pop(self):
-        return self.storage.pop()
-
+        return self.storage.remove_head()
 
 test = Stack()
-test.push('Eoin')
-print(test.__len__())
-
-
-
-class Node:
-    def __init__(self, data=None):
-        self.data = data
-
-    def get_value(self):
-        return self.data
-
-    def get_next(self):
-        return self.next_node
-
-    def set_next(self, new_node):
-        self.next_node = new_node
+eoin = test
+eoin.__len__()
+eoin.push('Eoin')
